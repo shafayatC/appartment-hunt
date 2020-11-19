@@ -1,0 +1,139 @@
+$green : #275A53; 
+$boxColor: #fff; 
+$bgColor: #f1f6f4;
+$gray: #606268; 
+
+.bgColor {
+	background-color:  $bgColor;
+}
+.search_wrap {
+    background: url('./img/srcbg.jpg');
+	background-size: 100% 100%;
+	background-attachment: fixed;
+}
+.srcTitle {
+	float: left;
+	width: 100%;
+	margin-top: 150px;
+}
+.srcTitle h1 {
+	color: #fff;
+	text-align: center;
+	font-size: 48px;
+	font-family: "Montserrat";
+	font-weight: bold;
+}
+.searchBox {
+	text-align: center;
+	margin-bottom: 150px;
+	float: left;
+	width: 100%;
+	height: 50px;
+	margin-top: 40px;
+}
+.searchBox input {
+	border: none;
+	border-radius: 4px;
+	padding: 0 20px;
+	height: 100%;
+	width: 510px;
+}
+.srcBtn {
+	border: none;
+	height: 100%;
+	padding: 0 35px;
+	border-radius: 4px;
+	margin-left: 20px;
+	background-color: $green;
+	color: #fff; 
+}
+/* hotel detail grid view section*/
+.heading {
+	margin-top: 30px;
+	margin-bottom: 70px;
+}
+.heading h4 {
+	font-size: 16px;
+	text-align: center;
+	font-weight: 500;
+}
+.heading h2 {
+	font-size: 34px;
+	font-weight: bold;
+	text-align: center;
+	margin: auto;
+}
+.houseDetal {
+	margin-bottom: 28px;
+}
+.thumb {
+	width: 100%;
+}
+.detail {
+	padding: 20px;
+	background-color: $boxColor;
+}
+.detail h3 {
+	font-weight: bold;
+	font-size: 20px;
+	padding-bottom: 10px;
+}
+.location img {
+	width: 15px;
+	float: left;
+	margin-right: 10px;
+}
+.hrDetail {
+	font-weight: 500;
+	margin-top: -3px;
+	float: left;
+	color: #747474;
+}
+.rmDetail {
+	@extend .hrDetail; 
+	margin-top: 1px;
+}
+.icon_1 {
+	float: left;
+	height: 24px;
+	margin-right: 10px;
+}
+.priceBtn h5 {
+	color: $green;
+	float: left;
+	font-size: 36px;
+	font-weight: bold;
+}
+.goDetail {
+	float: right;
+	border: none;
+	font-weight: 500;
+	padding: 10px 25px;
+	color: #fff;
+	background-color: $green;
+}
+/*service area*/
+.service_detail_wrap {
+	padding-bottom: 100px;
+}
+.serviceIcon img {
+	height: 80px;
+	margin: auto;
+	display: block;
+}
+.srvDetail {
+	text-align: center;
+	float: left;
+	width: 100%;
+	padding-top: 30px;
+}
+.srvDetail h5 {
+	font-size: 20px;
+	font-weight: 600;
+	padding-bottom: 9px;
+}
+.srvDetail p {
+	font-weight: 500;
+	line-height: 28px;
+	color: $gray; 
+}

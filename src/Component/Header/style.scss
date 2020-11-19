@@ -1,0 +1,40 @@
+$green : #275A53; 
+
+.header_wrap {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+.logo {
+	width: 100px;
+}
+.menuWrap {
+	float: right;
+	margin-top: 7px;
+}
+.menu {
+	list-style: none;
+	float: left;
+	padding: 0;
+	margin: 0;
+}
+.menu li {
+	float: left;
+}
+.menu li a {
+	padding: 10px 20px;
+	color: #000;
+	text-decoration: none;
+	font-weight: 500;
+	float: left;
+}
+.loginBtn {
+	border: none;
+	padding: 10px 30px;
+	color: #fff;
+	float: left;
+	border-radius: 4px;
+    text-decoration: none !important;
+	background: $green;
+	margin-left: 20px;
+}
+.loginBtn:hover {color: #fff}

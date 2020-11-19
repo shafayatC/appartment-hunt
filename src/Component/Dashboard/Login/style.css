@@ -1,0 +1,51 @@
+.loginWrap {
+	width: 500px;
+	margin: auto;
+}
+.logo_2 {
+	width: 200px;
+	margin: auto;
+	display: block;
+	margin-top: 45px;
+	margin-bottom: 60px;
+}
+.logo_2 img {
+	width: 100%;
+}
+.loginForm {
+	border: 1px solid #ababab;
+	border-radius: 6px;
+	padding: 140px 0;
+	background: #fff;
+}
+.loginForm h2 {
+	font-size: 17px;
+	font-weight: bold;
+	text-align: center;
+	margin-bottom: 25px;
+}
+.socialBtn {
+	width: 70%;
+	background: none;
+	border: thin solid #e8e8e8;
+	padding: 6px 5px;
+	margin: auto;
+	display: block;
+	border-radius: 23px;
+}
+.socialBtn img {
+	width: 23px;
+	float: left;
+}
+.socialBtn span {
+	font-size: 12px;
+}
+.loginForm p {
+	text-align: center;
+	font-size: 12px;
+	margin-top: 10px;
+}
+.loginForm p span {
+	color: #6facfc;
+	text-decoration: underline;
+}

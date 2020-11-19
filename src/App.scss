@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+$warningColor : red;
+$font_default : 'Poppins'; 
+$font_2: 'Montserrat';
+$fontSize_default: 16px; 
+
+body, html{font-family: $font_default, sans-serif ; font-size: $fontSize_default;}
+.fwidth {float: left; width: 100%}
+.left {float: left;}
+.right {float: right;}
+.space {padding-bottom: 150px; }
+button{font-family: $font_default, sans-serif; outline: none; cursor: pointer;}
+.error404 {
+	text-align: center;
+	font-size: 40px;
+	color: $warningColor; 
+	margin-top: 121px;
+}
+#warningMsg {
+	float: left;
+	width: 100%;
+	color: $warningColor;
+	padding-top: 20px;
+}
+textarea:focus, input:focus, a{ outline: none;}

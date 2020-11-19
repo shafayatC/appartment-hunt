@@ -1,0 +1,55 @@
+$green: #275A53; 
+$textColorWhite: #fff; 
+
+.footer_wrap {
+    background-color: $green;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.icon_2{
+	width: 7%;
+	float: left;
+}
+.address_wrap p {
+	float: left;
+	width: 93%;
+	padding: 0 12px;
+	font-weight: 500;
+	color: $textColorWhite;
+	line-height: 32px;
+}
+.title_3 {
+	font-weight: 600;
+	color : $textColorWhite;
+	padding-bottom: 15px;
+	font-size: 20px;
+}
+.linkList {
+	list-style: none;
+	padding: 0;
+}
+.linkList li a {
+	color: #fff;
+	padding: 7px 0;
+	float: left;
+	width: 100%;
+}
+.about {
+	float: left;
+	width: 100%;
+	color: #fff;
+}
+.socialLink {
+	float: left;
+	width: 100%;
+}
+.sclLink {
+	width: 24px;
+	/* background: red; */
+	display: block;
+	float: left;
+	margin-right: 29px;
+}
+.socialLink img {
+	width: 100%;
+}
