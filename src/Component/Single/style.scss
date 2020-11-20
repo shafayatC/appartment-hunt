@@ -1,0 +1,116 @@
+$deepGreen: #16322e; 
+$green_2: #16322E; 
+$green : #275A53;
+$gray : #747474; 
+$white: #fff; 
+$bgGray: #f4f4f4;
+
+
+.heading_wrap {
+    background: url('../Home/img/srcbg.jpg');
+	background-size: 100% 100%;
+	background-attachment: fixed;
+}
+.title_4 {
+	float: left;
+	width: 100%;
+	margin-top: 100px;
+	margin-bottom: 100px;
+}
+.title_4 h1 {
+	color: #fff;
+	text-align: center;
+	font-size: 48px;
+	font-family: "Montserrat";
+	font-weight: bold;
+}
+/* slider */
+.singlePost_wrap {
+	margin-top: 50px;
+}
+.post_detail_wrap .slick-arrow {
+	display: none !important;
+}
+
+.shs_slider {
+	list-style: none;
+	padding: 0;
+	float: left;
+	margin-top: 20px;
+}
+.shs_slider li {
+	float: left;
+	width: 22%;
+	margin-right: 29px;
+}
+.shs_slider li a {
+	width: 100%;
+	float: left;
+}
+.sldThumb {
+	width:100%;
+}
+.shs_slider li:last-child {
+	margin-right: 0px;
+	float: right;
+}
+.sldImg {
+	width: 100%;
+}
+/* post detail info */
+.post_detail {
+    margin-top: 45px;
+	margin-bottom: 45px;
+}
+.heading_price h1 {
+	float: left;
+	font-size: 36px;
+	font-weight: bold;
+	color: $deepGreen;
+}
+.price_3 {
+	float: right;
+	font-size: 36px;
+	font-weight: bold;
+	color: $green; 
+}
+.postDescription p {
+	font-size: 24px;
+	font-weight: 500;
+	line-height: 40px;
+	color: $gray; 
+}
+.postDescription h3 {
+	font-size: 28px;
+	font-weight: bold;
+	padding-top: 25px;
+	padding-bottom: 10px;
+	color: $green_2; 
+}
+/* booking form */
+.booking_form {
+	background-color:$bgGray;
+	float: left;
+	width: 100%;
+	padding: 40px 25px;
+}
+.bkForm {
+	float: left;
+	width: 100%;
+}
+.bkForm input, .bkForm textarea {
+	width: 100%;
+	border: thin solid #DDD;
+	padding: 6px 15px;
+	font-weight: 500;
+	color: #747474;
+	margin-bottom: 15px;
+}
+.bkForm button {
+	background: #275A53;
+	width: 100%;
+	border: none;
+	padding: 13px 0;
+	color: #fff;
+	font-weight: 500;
+}

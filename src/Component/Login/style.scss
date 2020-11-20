@@ -1,0 +1,104 @@
+$green: #275A53; 
+$white : #fff;
+
+.logOrRegWrapper {
+	margin-top: 70px;
+}
+.loginOrRegForm {
+    width: 400px; 
+    margin: auto;
+}
+.menualRegistration {
+	border: thin solid #b3b3b3;
+	border-radius: 4px;
+}
+.menualRegistration form {
+	padding: 10px 30px;
+}
+.menualRegistration input {
+	float: left;
+	width: 100%;
+	border: none;
+	border-bottom: thin solid #c4c4c4;
+	padding: 10px 0;
+	margin-bottom: 10px;
+	color: black;
+}
+.signupBtn {
+	float: left;
+	width: 100%;
+	background:$green;
+	color: $white;
+	border: none;
+	padding: 10px;
+	margin-top: 10px;
+	cursor: pointer;
+}
+.menualRegistration p {
+	float: left;
+	width: 100%;
+	text-align: center;
+}
+.switchBtn {
+	background: none;
+	border: none;
+	color: $green;
+}
+.divid {
+	text-align: center;
+	font-weight: bold;
+}
+.socialBtn {
+	padding: 5px 0px;
+	background: none;
+	border-radius: 26px;
+	border: thin solid #d2d2d2;
+	text-align: center;
+	margin-bottom: 10px;
+	cursor: pointer;
+}
+.socialBtn img {
+	width: 31px;
+	float: left;
+	margin-left: 7px;
+}
+.socialBtn span {
+	padding-top: 8px;
+	display: block;
+}
+
+.remember {
+	float: left;
+	width: 40%;
+	/* background: red; */
+}
+#remember {
+	float: left;
+	width: 0px;
+	padding: 3px 3px;
+	margin: 4px 3px;
+}
+.remember label {
+	float: left;
+	margin: 0px;
+	padding: 0 5px;
+}
+.forget {
+	float: right;
+	border: none;
+	background: none;
+	color: $green;
+}
+.warning {
+	border-bottom: thin solid red !important;
+	color: red !important;
+}
+#warningMsg {
+	padding: 0;
+	margin: 0;
+	font-size: 13px;
+	color: red;
+	padding-top: 10px;
+	margin-top: 5px;
+	float: left;
+}
