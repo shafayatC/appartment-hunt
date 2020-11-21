@@ -1,3 +1,7 @@
+$greenNormal : #009444; 
+$green : #275A53; 
+$white : #fff; 
+
 .addEventWrap {
 	padding-top: 25px;
 }
@@ -6,6 +10,10 @@
 	padding: 0 55px;
 	height: 100vh;
 	background: #fff;
+}
+.logo_3 img {
+	width: 100px;
+	float: left;
 }
 .dashMenu {
 	margin-top: 20px;
@@ -16,20 +24,18 @@
 	color: #000;
 }
 .active.lnk_1 {
-	color: #009444;
+	color: $green;
 }
 .icon_2 {
-	width: 18px;
+	width: 20px;
 	margin-right: 7px;
 }
 .rightWidget {
 	width: 75%;
-	/* background: red; */
 }
 .dashHeading {
 	font-size: 20px;
 	padding: 15px 20px;
-	/* background: red; */
 }
 .eventForm {
 	background: #f4f7fc;
@@ -39,10 +45,8 @@
 	height: 100vh;
 }
 .creatForm {
-	/* background: #fff; */
 	width: 95%;
 	margin: auto;
-	/* padding: 30px; */
 }
 .formWrap {
 	background: #fff;
@@ -52,23 +56,21 @@
 }
 .formLeft {
 	width: 47%;
-	/* background: gray; */
 	float: left;
 }
 .formLeft p {
 	float: left;
 	width: 100%;
-	/* background: red; */
 	margin: 0;
 	font-size: 13px;
 	padding-bottom: 15px;
 }
-.formLeft input {
+.formLeft input, .formRight input {
 	width: 100%;
 	border: thin solid #c9c9c9;
 	border-radius: 4px;
 	padding: 4px 10px;
-	float: ;
+	margin-bottom: 15px;
 	float: left;
 }
 .p_2 {
@@ -102,23 +104,28 @@
 	border: thin solid #c9c9c9;
 	border-radius: 4px;
 	padding: 4px 10px;
-	float: ;
 	float: left;
 	display: none;
 }
 .upload {
-	border: thin solid #0084ff;
-	background: #e5f3ff;
+	border: thin solid $greenNormal;
+	background: #deffed;
 	padding: 7px 28px 7px 15px;
-	color: #0084ff;
+	color: $greenNormal;
 	font-size: 14px;
 	border-radius: 4px;
 }
 .upload img {
-	width: 30px;
+	width: 24px;
+	margin-right: 7px;
+	float: left;
+}
+#uploadBtn span {
+	margin-top: 2px;
+	float: left;
 }
 .eventSubmitBtn {
-	background: #0084ff;
+	background: $green;
 	border: none;
 	padding: 5px 20px;
 	color: #fff;
@@ -165,92 +172,20 @@
 	border-radius: 4px;
 }
 .trash img{width: 100%}
+/* My rent List*/
 
-/* user create order*/
-
-.creatOrderForm {
-	float: left;
-	width: 50%;
+.myRent{
+	@extend .userListWrap; 
 }
-.creatOrderForm input {
-	width: 100%;
-	border: none;
-	padding: 12px 10px;
-	margin-bottom: 25px;
-	font-size: 14px;
-	border-radius: 4px;
-}
-.creatOrderForm textarea {
-	border: none;
-	padding: 10px 10px;
-	width: 100%;
-	margin-bottom: 25px;
-	min-height: 100px;
-}
-.creatOrderForm input::placeholder, .creatOrderForm textarea::placeholder {color: #b7b7b7;  }
-
-.price_inp {
-	width: 49% !important;
-	float: left;
-}
-.file_upload {
-	float: right;
-	width: 49% !important;
-	background: #deffed;
-	border: thin solid #009444 !important;
+.table_2 th:nth-child(3) {
+	text-align: right;
+	padding-right: 60px;
 }
 .btn_3 {
-	font-size: 16px;
-	padding: 10px 40px;
-}
-/* user service list style*/
-.srv_list {
-	float: left;
-	width: 438px;
-	background: #fff;
-	margin-right: 30px;
-	margin-bottom: 30px;
-	padding: 20px;
-}
-.srv_top {
-	float: left;
-	width: 100%;
-}
-.srv_top img {
-	width: 60px;
-	float: left;
-}
-.statusBtn {
 	float: right;
 	border: none;
-	padding: 10px 27px;
+	padding: 10px 19px;
+	background-color: $green;
+	color: $white;
 	border-radius: 4px;
-	min-width: 112px;
-}
-/*status btn */
-.statusBtn.pending {
-	background: #ffe3e3;
-	color: #ff4545;
-}
-.statusBtn.done {
-	background: #c6ffe0;
-	color:#32af6b;
-}
-.statusBtn.ongoing{
-	background: #ffe5b2;
-	color:#ffbd3e;
-}
-/*status btn end */
-.srv_list h4 {
-	float: left;
-	width: 100%;
-	font-size: 20px;
-	font-weight: 600;
-	padding-top: 20px;
-	padding-bottom: 10px;
-}
-.srv_list p {
-	float: left;
-	width: 100%;
-	font-weight: 300;
 }
