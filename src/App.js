@@ -34,7 +34,7 @@ function App() {
               <Dashboard name="Booking List" component={<BookingList/>} ></Dashboard>
             </PrivateRoute>
             <PrivateRoute  path="/event-create">
-              <Dashboard name="Event Create" component={<AddRentHouse/>} ></Dashboard>
+              <Dashboard name="Add New Rent House" component={<AddRentHouse/>} ></Dashboard>
             </PrivateRoute>
             <PrivateRoute  path="/rent-list">
              <Dashboard name="My Rent List" component={<Myrent/>} ></Dashboard>
