@@ -36,9 +36,6 @@ const Login = (props) => {
     repassword : ''
 
 })
-const RegSubmitValidity =() => {}
-const signIn=()=>{}
-const fbLogin=()=>{}
 
 const changeFname=(event)=>{
     setCreatUser({...creatUser,
@@ -64,6 +61,104 @@ const logHandler=(event)=>{
 const regHandler=(event)=>{
     event.preventDefault();
 
+}
+
+const RegSubmitValidity =() => {
+           
+    const emailValid = /\S+@\S+\.\S+/.test(creatUser.email);
+    const passMinLengtth = creatUser.password > 6; 
+    const passMatch = creatUser.password == creatUser.repassword; 
+
+    const Fname = document.getElementById("fname");
+    const Lname = document.getElementById("lname");
+    const mailId = document.getElementById("email");
+    const passId = document.getElementById("pass");
+    const rePassId =  document.getElementById("repass");
+    const ValidityMsg= []; 
+    
+    creatUser.fname ?  Fname.classList.remove("warning") : Fname.classList.add("warning");
+    !creatUser.fname && ValidityMsg.push("First Name Empty");
+    emailValid ?  mailId.classList.remove("warning") : mailId.classList.add("warning");
+   !emailValid && ValidityMsg.push("Email Not Valide");
+    passMatch ?  passId.classList.remove("warning") : passId.classList.add("warning");
+    passMatch ?  rePassId.classList.remove("warning") : rePassId.classList.add("warning");
+    passMinLengtth ?  passId.classList.remove("warning") : passId.classList.add("warning");
+    !passMinLengtth && ValidityMsg.push("Password Lenght Minimum 6 Character");
+    !passMatch && ValidityMsg.push("Password Not Match");
+  //creatUser.lname ?  Lname.classList.remove("warning") : Lname.classList.add("warning");
+    
+    if(emailValid && passMinLengtth && passMatch && creatUser.fname){
+        RegSubmit();
+        console.log(true)
+    }else {
+        console.log(ValidityMsg); 
+        const mapping =  ValidityMsg.map(res=> '<li>' + res + '</li>' ); 
+        document.getElementById("warningMsg").innerHTML = mapping; 
+        console.log(false);
+    }
+    console.log(emailValid , passMinLengtth, passMatch) ;
+
+}
+const RegSubmit=()=>{
+
+    fire.auth().createUserWithEmailAndPassword(creatUser.email, creatUser.password).then((u)=>{
+
+        const fullname = creatUser.fname + " " +  creatUser.lname;
+
+       /* setLoginUser({
+            name : fullname,
+            email: creatUser.email,
+        });
+        */
+        var user = fire.auth().currentUser;
+
+        user.updateProfile({
+            displayName: fullname,
+        })
+        history.replace(from);
+       console.log("sucess");
+    }).catch((error)=>{
+        console.log(error);
+    })
+}
+   
+const signIn=(event)=>{
+    event.preventDefault(); 
+
+        fire.auth().signInWithEmailAndPassword(creatUser.email,creatUser.password).then(result=>{
+
+        var user = result.user;
+        const {displayName, email} = user; 
+
+        AddToUser(displayName, email);
+
+        history.replace(from);
+        console.log("logIn");
+      }).catch((error)=>{
+        alert('username or password wrong');
+      });
+}
+    
+const fbLogin=()=>{
+
+    fire.auth().signInWithPopup(fbProvider).then(function(result) {
+        var token = result.credential.accessToken;
+        var user = result.user;
+        const {displayName, email, photoURL} = user; 
+
+        AddToUser(displayName, email, photoURL);
+        
+        history.replace(from);
+        console.log(user);
+
+
+      }).catch(function(error) {
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        var email = error.email;
+        var credential = error.credential;
+        console.log(errorCode)
+      });          
 }
 
 const googleLogin =() => {
