@@ -114,7 +114,7 @@ const AddRentHouse = () => {
 
       //  console.log("multiple img : " + typeof(Object.keys(images)) );
 
-        fetch('http://localhost:4000/addRent', {
+        fetch('https://sheltered-forest-41479.herokuapp.com/addRent', {
           method: 'POST',
           body: data
         })

@@ -8,7 +8,7 @@ const BookingList = () => {
     const updateBookingStatus = val => {
         const value = document.getElementById("status").value; 
     
-        fetch(`http://localhost:4000/updateBookingList/${val}`, {
+        fetch(`https://sheltered-forest-41479.herokuapp.com/updateBookingList/${val}`, {
             method: 'PATCH', // patch
             headers: {'Content-Type': 'application/json',},
             body: JSON.stringify({status: value}),
@@ -26,7 +26,7 @@ const BookingList = () => {
     }
 
     useEffect(()=>{
-        fetch('http://localhost:4000/showBookingLIst')
+        fetch('https://sheltered-forest-41479.herokuapp.com/showBookingLIst')
         .then(res => res.json())
         .then(data => setBookingList(data))
     },[])

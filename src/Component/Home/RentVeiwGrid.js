@@ -11,7 +11,7 @@ const RentVeiwGrid = () => {
      history.push(`/post/${vl}`);
    }
     useEffect(()=>{
-        fetch(`http://localhost:4000/rentList/6`)
+        fetch(`https://sheltered-forest-41479.herokuapp.com/rentList/6`)
         .then(res => res.json())
         .then(data =>setRentData(data))
     },[])

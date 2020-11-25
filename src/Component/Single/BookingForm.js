@@ -30,7 +30,7 @@ const BookingForm = ({postId, user}) => {
 
       if(booking.name && booking.email && emailValidity && booking.message ){
       
-        fetch('http://localhost:4000/booking', {
+        fetch('https://sheltered-forest-41479.herokuapp.com/booking', {
           method: 'POST', // or 'PUT'
           headers: {'Content-Type': 'application/json',},
           body: JSON.stringify(booking),

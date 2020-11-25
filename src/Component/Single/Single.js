@@ -14,7 +14,7 @@ const Single = () => {
     const [postDetail, setPostDetail] = useState([]);
     
     useEffect(()=>{
-        fetch(`http://localhost:4000/post/${id}`)
+        fetch(`https://sheltered-forest-41479.herokuapp.com/post/${id}`)
         .then(res => res.json())
         .then(data => setPostDetail(data))
 
