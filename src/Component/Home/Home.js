@@ -5,8 +5,14 @@ import RentVeiwGrid from './RentVeiwGrid';
 import Searchbox from './Searchbox';
 import ServiceWidget from './ServiceWidget';
 import "./style.scss"; 
+import { AddToUser } from '../Redux/actions/userActionss';
+import {connect} from 'react-redux';
 
-const Home = () => {
+const Home = (props) => {
+
+    const {user, products, AddToUser} = props; 
+
+
     return (
         <>
             <Header></Header>
@@ -19,5 +25,13 @@ const Home = () => {
         </>
     );
 };
+const mapStateToProps = state =>{
+    return {
+        user : state.user
+        }
+}
 
-export default Home;
+const mapDispatchToProps = {
+    AddToUser: AddToUser
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

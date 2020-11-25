@@ -13,14 +13,18 @@ import {
     useHistory,
     useLocation
   } from "react-router-dom";
+import { AddToUser } from '../Redux/actions/userActionss';
+import { connect } from 'react-redux';
 
 
-const Login = () => {
+const Login = (props) => {
     
   const history = useHistory();
   const location = useLocation();
 
   let { from } = location.state || { from: { pathname: "/" } };
+    /* redux data */
+    const {user, AddToUser} = props; 
 
   /*flip login to registration */ 
   const [newUser, setNewUser] = useState(false);
@@ -35,7 +39,6 @@ const Login = () => {
 const RegSubmitValidity =() => {}
 const signIn=()=>{}
 const fbLogin=()=>{}
-const googleLogin=()=>{}
 
 const changeFname=(event)=>{
     setCreatUser({...creatUser,
@@ -61,6 +64,34 @@ const logHandler=(event)=>{
 const regHandler=(event)=>{
     event.preventDefault();
 
+}
+
+const googleLogin =() => {
+    fire.auth().signInWithPopup(provider).then(result => {
+        var token = result.credential.accessToken;
+        var user = result.user;
+        const {displayName, email, photoURL} = user; 
+
+        AddToUser(displayName, email, photoURL);
+
+        /*
+        setUser({
+            name : displayName,
+            email: email,
+            photo: photoURL, 
+        });
+        */
+        history.replace(from);
+        console.log(user); 
+
+      }).catch(function(error) {
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        var email = error.email;
+        var credential = error.credential;
+        console.log('error \n'+ error)
+      });
+      
 }
     return (
         <>
@@ -113,4 +144,12 @@ const regHandler=(event)=>{
     );
 };
 
-export default Login;
+const mapStateToProps = state =>{
+    return{
+        user: state.user
+    }
+}
+const mapDispatchToProps  = {
+    AddToUser : AddToUser    
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Login);

@@ -3,9 +3,34 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 
 const BookingList = () => {
 
-    const [eventList, setEventList] =  useState([]); 
-    const deletEvent = val => {
+    const [bookingList, setBookingList] =  useState([]); 
+
+    const updateBookingStatus = val => {
+        const value = document.getElementById("status").value; 
+    
+        fetch(`http://localhost:4000/updateBookingList/${val}`, {
+            method: 'PATCH', // patch
+            headers: {'Content-Type': 'application/json',},
+            body: JSON.stringify({status: value}),
+          })
+          .then(response => response.json())
+          .then(data => {
+            if(data){
+              alert("Order Status Update");
+            }
+          })
+          .catch((error) => {
+            console.error('Error:', error);
+          });
+        
     }
+
+    useEffect(()=>{
+        fetch('http://localhost:4000/showBookingLIst')
+        .then(res => res.json())
+        .then(data => setBookingList(data))
+    },[])
+
     return (
         <>
           
@@ -18,18 +43,25 @@ const BookingList = () => {
                 <th>Massage</th>
                 <th>Action</th>
             </tr>
-            {eventList.map(data=>
+            {bookingList.map(data=>
                     <tr>
-                    <td>{data.eventname}</td>
+                    <td>{data.name}</td>
                     <td>{data.email}</td>
-                    <td>{data.date}</td>
-                    <td>{data.description}</td>
-                    <td><button onClick={()=>deletEvent(data._id)} className="trash"><img src={require('./img/trash.png')} /></button></td>
+                    <td>{data.phone}</td>
+                    <td>{data.message}</td>
+                    <td>
+                        <select onChange={()=>updateBookingStatus(data._id)} name="status" id="status">
+                            <option className="ongoing" selected={data.status === "ongoing" ? "selected": ""} value="ongoing">On going</option>
+                            <option className="pending" selected={data.status === "pending" ? "selected": ""}   value="pending">Pending</option>
+                            <option className="done" selected={data.status === "done" ? "selected": ""} value="done">Done</option>
+                        </select>
+                        {console.log("testing : " + data.status)}
+                    </td>
                 </tr>
                 )}
 
             </table>
-            {eventList.length === 0 && <div style={{margin: "auto", width: "44px", paddingTop: "20px"}}><CircularProgress /></div>}
+            {bookingList.length === 0 && <div style={{margin: "auto", width: "44px", paddingTop: "20px"}}><CircularProgress /></div>}
 
         </div>  
         </>

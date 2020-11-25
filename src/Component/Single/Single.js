@@ -1,48 +1,65 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import BookingForm from './BookingForm';
 import HeadingPage from './HeadingPage';
 import SliderImg from './SliderImg';
+import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 const Single = () => {
+    const {id} = useParams(); 
+
+    const [postDetail, setPostDetail] = useState([]);
+    
+    useEffect(()=>{
+        fetch(`http://localhost:4000/post/${id}`)
+        .then(res => res.json())
+        .then(data => setPostDetail(data))
+
+      //  console.log(postDetail.title);
+    },[])
+
     return (
         <>
+        
           <Header></Header>
           <HeadingPage></HeadingPage>
           <div className="singlePost_wrap fwidth">
               <div className="container">
                   <div className="row">
+
+
+                  {postDetail.map(vl =>
                   <div className="col-md-8 col-sm-12 post_detail_wrap">
-                    <SliderImg></SliderImg>
+
+                    <SliderImg img={vl.image}></SliderImg>
+
+                    {/* post details */}
 
                     <div className="post_detail fwidth">
                         <div className="heading_price fwidth">
-                            <h1>Family Apartment Three</h1>
-                            <h2 className="price_3">$256</h2>
+                            <h1>{vl.title}</h1>
+                             <h2 className="price_3">${vl.price}</h2>
                         </div>
                         <div className="postDescription fwidth">
-                            <p>3000 sq-ft., 3 Bedroom, Semi-furnished, Luxurious, South facing Apartment for Rent in Rangs Malancha, Melbourne.</p>
-                            <h3>Price Details-</h3>
-                            <p>Rent/Month: $550 (negotiable) <br></br>
-                                Service Charge : 8,000/= Tk per month, subject to change <br></br>
-                                Security Deposit : 3 month’s rent <br></br>
-                                Flat Release Policy : 3 months earlier notice required</p>
-                                <h3>Property Details-</h3>
-                                <p>Address & Area : Rangs Malancha, House-68, Road-6A (Dead End Road), Dhanmondi Residential Area.
-                                Flat Size : 3000 Sq Feet. <br></br>
-                                Floor :  A5 (5th Floor) (6 storied Building ) (South Facing Unit)<br></br>
-                                Room Category : 3 Large Bed Rooms with 3 Verandas, Spacious Drawing, Dining & Family Living Room, Highly Decorated Kitchen with Store Room and Servant room with attached Toilet.
-                                Facilities : 1 Modern Lift, All Modern Amenities & Semi Furnished. <br></br>
-                                Additional Facilities : a. Electricity with full generator load, b. Central Gas Geyser, c. 2 Car Parking with 1 Driver’s Accommodation, d. Community Conference Hall, e. Roof Top Beautified Garden and Grassy Ground, f. Cloth Hanging facility with CC camera
-                            </p>
-
+                          {/*
+                          * property detail 
+                          * use htm parser 
+                          */}
+                            {ReactHtmlParser(vl.propertyDetail)}
                         </div>
                     </div>
                     
                   </div>
+                )}
+                
+                {postDetail.length === 0 && <div className="col-md-8 col-sm-12 post_detail_wrap"><div className="loader mt-5"><CircularProgress /></div></div>}
+
                     <div className="col-md-4  col-sm-12 sidebasre">
-                        <BookingForm></BookingForm>
+                        {/* booking form */}
+                        <BookingForm postId={id}></BookingForm>
                     </div>
                   </div>
               </div>

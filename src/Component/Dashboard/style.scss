@@ -58,36 +58,34 @@ $white : #fff;
 	width: 47%;
 	float: left;
 }
-.formLeft p {
-	float: left;
-	width: 100%;
-	margin: 0;
-	font-size: 13px;
-	padding-bottom: 15px;
-}
 .formLeft input, .formRight input {
 	width: 100%;
 	border: thin solid #c9c9c9;
 	border-radius: 4px;
 	padding: 4px 10px;
-	margin-bottom: 15px;
 	float: left;
 }
 .p_2 {
 	padding-top: 15px;
 }
-.formLeft textarea {
+.textarea_2 {
 	width: 100%;
-	min-height: 100px;
+	min-height: 119px;
 	border: thin solid #c9c9c9;
 	border-radius: 4px;
+	padding: 4px 10px;
+	margin-bottom: 15px;
 }
 .formRight {
 	float: right;
 	width: 47%;
 }
-.formRight p {
-	font-size: 13px;
+
+.p_1 {
+	margin: 15px 0;
+	float: left;
+	width: 100%;
+	font-size: 13px; 
 }
 .date_5 {
 	width: 100%;
@@ -124,6 +122,16 @@ $white : #fff;
 	margin-top: 2px;
 	float: left;
 }
+
+.file_upload_2 {
+	float: left;
+	width: 49% !important;
+	background: #deffed;
+	border: thin solid #009444 !important;
+	padding: 13px 15px;
+	font-size: 12px;
+	border-radius: 4px;
+}
 .eventSubmitBtn {
 	background: $green;
 	border: none;
@@ -141,7 +149,8 @@ $white : #fff;
 	width: 100%;
 	padding: 50px 0;
 	float: left;
-	height: 100vh;
+	min-height: 100vh;
+	height: 100%; 
 }
 .userListWrap {
 	background: #fff;
@@ -171,7 +180,9 @@ $white : #fff;
 	padding: 5px 7px;
 	border-radius: 4px;
 }
-.trash img{width: 100%}
+.ongoing{color: #FFBD3E}
+.pending{color: #FF4545}
+.done{color: #009444}; 
 /* My rent List*/
 
 .myRent{

@@ -44,10 +44,10 @@ const Footer = () => {
                         available to answer any 
                         question 24/7.</p>
                         <div className="socialLink">
-                            <Link className="sclLink" to=""><img src={require('./img/fb.png').default}/></Link>
-                            <Link className="sclLink" to=""><img src={require('./img/Vector-1.png').default}/></Link>
-                            <Link className="sclLink" to=""><img src={require('./img/linkdin.png').default}/></Link>
-                            <Link className="sclLink" to=""><img src={require('./img/youtube.png').default}/></Link>
+                            <a className="sclLink" href="https://facebook.com" target="_blank"><img src={require('./img/fb.png').default}/></a>
+                            <a className="sclLink" href="https://google.com" target="_blank"><img src={require('./img/Vector-1.png').default}/></a>
+                            <a className="sclLink" href="https://linkdin.dom" target="_blank"><img src={require('./img/linkdin.png').default}/></a>
+                            <a className="sclLink" href="https://youtube.com" target="_blank"><img src={require('./img/youtube.png').default}/></a>
                         </div>
                     </div>
                     </div>

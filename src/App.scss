@@ -24,3 +24,8 @@ button{font-family: $font_default, sans-serif; outline: none; cursor: pointer;}
 	padding-top: 20px;
 }
 textarea:focus, input:focus, a{ outline: none;}
+.loader {
+	margin: auto;
+	display: block;
+	text-align: center;
+}

@@ -1,16 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 //import "slick-carousel/slick/slick-theme.css";
 import './style.scss'; 
 
-const SliderImg = () => {
+const SliderImg = ({img}) => {
 
     const settings = {
         customPaging: function(i) {
           return (
+            
             <a>
-              <img className="sldThumb" src={require(`./img/sliderImg/slide${i + 1}.png`).default} />
+            {/* porps image use here*/}
+            <img className="sldThumb" src={img[i+0]} />
             </a>
           );
         },
@@ -23,22 +25,16 @@ const SliderImg = () => {
         autoplay: true
       };
 
-
     return (
       <>
         <Slider {...settings}>
-          <div>
-            <img className="sldImg" src={require('./img/sliderImg/slide1.png').default} />
-          </div>
-          <div>
-          <img className="sldImg"  src={require('./img/sliderImg/slide2.png').default} />
-          </div>
-          <div>
-          <img className="sldImg"  src={require('./img/sliderImg/slide3.png').default} />
-          </div>
-          <div>
-          <img className="sldImg"  src={require('./img/sliderImg/slide4.png').default} />
-          </div>
+        {/* props image map loop */}
+          {img.map(images=>
+              <div>
+               <img className="sldImg"  src={images} />
+              </div>
+             )}
+
         </Slider>
       </>
     );

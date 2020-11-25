@@ -46,6 +46,7 @@ $bgGray: #f4f4f4;
 .shs_slider li a {
 	width: 100%;
 	float: left;
+	cursor: pointer;
 }
 .sldThumb {
 	width:100%;
@@ -74,18 +75,23 @@ $bgGray: #f4f4f4;
 	font-weight: bold;
 	color: $green; 
 }
+.heading_price {
+	margin-bottom: 20px;
+}
 .postDescription p {
 	font-size: 24px;
 	font-weight: 500;
 	line-height: 40px;
 	color: $gray; 
 }
-.postDescription h3 {
-	font-size: 28px;
+.postDescription h2, .postDescription h3, .postDescription h4, .postDescription h5  {
 	font-weight: bold;
 	padding-top: 25px;
-	padding-bottom: 10px;
+	padding-bottom: 15px;
 	color: $green_2; 
+}
+.postDescription h3 {
+	font-size: 28px;
 }
 /* booking form */
 .booking_form {
