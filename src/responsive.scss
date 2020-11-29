@@ -146,5 +146,12 @@ $white: #fff;
     }
     .quickLink{@extend .companyLink; }
     .aboutUs {@extend .companyLink; }
-
+    /*login form*/
+    .loginOrRegForm, .loginOrRegForm form {
+        width: 100%;
+        float: left;
+    }
+    .loginOrRegForm {
+        padding: 20px;
+    }
 }
