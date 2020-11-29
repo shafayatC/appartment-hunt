@@ -1,0 +1,150 @@
+$green : #275a53; 
+$white: #fff; 
+
+/*		Mobile Layout: 480px.   */
+@media only screen and (max-width: 767px) {
+    .logo { margin: auto;}
+    .logo img {
+        margin-bottom: 15px;
+    }
+	.menuWrap {
+		display: none;
+    }
+    .mobileMenu {
+        display: block;
+    }
+    .menuArea {
+        padding: 0px;
+    }
+    .btnMenu {
+        margin: auto;
+        display: block;
+        width: 100%;
+        background: $green;
+        color: $white;
+    }/* 
+    #menu-list-grow {
+        width: 100% !important;
+        display: block;
+        float: left;
+        background: #fff;
+    }
+    #menu-list-grow li {
+        width: 100%;
+        float: left;
+    }
+    #menu-list-grow li a {
+        float: left;
+        width: 100%;
+    } */
+    .mobileMenu {
+        display: block;
+        width: 100%;
+        z-index: 999;
+        position: absolute;
+        background: $white;
+    }
+    .btnMenu {
+        color: #16322e;
+        outline: none; 
+    }
+    #menu-list-grow {
+        width: 100%;
+        float: left;
+        background: $white;
+        padding: 0px; 
+    }
+    #menu-list-grow li, #menu-list-grow li a {
+        float: left;
+        width: 100%;
+    }
+    #menu-list-grow li {
+        border-bottom: thin solid $green;
+    }
+    #menu-list-grow li:hover {
+        background-color: $green;
+        color: $white;
+    }
+    #menu-list-grow li a:hover{color: $white}
+    #menu-list-grow li a {
+        color: $green;
+        text-align: center;
+        text-decoration: none;
+        padding: 5px 27px;
+    }
+    .srcTitle {
+        margin-top: 80px;
+    }
+    .srcTitle h1 {
+        font-size: 35px;
+    }
+    .searchBox input {
+        width: 100%;
+    }
+    .srcBtn {
+        width: 100%;
+        margin: 0px;
+    }
+    .icon_2 {
+        margin: auto;
+        display: block;
+        float: none;
+    }
+    .address_wrap p {
+        width: 100%;
+        text-align: center;
+    }
+    .title_3 {
+        text-align: center;
+    }
+    .linkList {
+        text-align: center;
+    }
+    .about {
+        text-align: center;
+    }
+    .socialLink {
+        width: max-content;
+        float: none;
+        margin: auto;
+        display: block;
+    }
+    /*signle page responsive*/
+    .title_4 {
+        margin-top: 60px;
+        margin-bottom: 48px;
+    }
+    .title_4 h1 {
+        font-size: 35px;
+        margin: 0px;
+    }
+    .shs_slider li {
+        float: left;
+        width: 21%;
+        margin-right: 5%;
+    }
+    .heading_price h1 {
+        font-size: 27px !important;
+        text-align: center;
+        width: 100%;
+    }
+   
+    .price_3 {
+        text-align: center;
+        width: 100%;
+        font-size: 25px;
+        margin-top: 15px;
+    }
+    .postDescription p {
+        font-size: 20px;
+    }
+    .postDescription h3 {
+        font-size: 25px;
+    }
+    .companyLink {
+        margin-top: 40px;
+    }
+    .quickLink{@extend .companyLink; }
+    .aboutUs {@extend .companyLink; }
+
+}

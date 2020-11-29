@@ -1,11 +1,5 @@
-import './App.scss';
 import Home from './Component/Home/Home';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+import {  BrowserRouter as Router,  Switch, Route,} from "react-router-dom";
 import Single from './Component/Single/Single';
 import Login from './Component/Login/Login';
 import Header from './Component/Header/Header';
@@ -15,6 +9,8 @@ import EventCreate from './Component/Dashboard/EventCreate';
 import AddRentHouse from './Component/Dashboard/AddRentHouse';
 import Myrent from './Component/Dashboard/Myrent';
 import PrivateRoute from './Component/PrivateRoute/PrivateRoute';
+import './App.scss';
+import './responsive.scss';
 
 function App() {
   return (
